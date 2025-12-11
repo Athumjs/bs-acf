@@ -1,0 +1,22 @@
+:root {
+  --cor0: #f2cf66;
+  --cor1: #f2eadf;
+  --cor2: #a6511f;
+  --cor3: #a6401b;
+
+  --bodyColor: var(--cor1);
+  --bgColor: white;
+  --textColor: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  background-color: var(--bodyColor);
+  transition: all 0.5s ease-in-out;
+}

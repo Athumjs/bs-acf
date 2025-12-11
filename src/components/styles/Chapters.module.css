@@ -1,0 +1,78 @@
+#chapters {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: 500px;
+  height: 500px;
+  background-color: var(--cor2);
+  color: white;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--cor1);
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999999999;
+}
+
+#chapters > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
+#chapters > div > svg {
+  cursor: pointer;
+  transform: all 0.2s;
+}
+
+#chapters > div > svg:hover {
+  transform: scale(130%);
+}
+
+#chapters > ul {
+  width: 100%;
+  height: 85%;
+  display: grid;
+  grid-template-columns: repeat(5, 5rem);
+  grid-auto-rows: 2.5rem;
+  justify-content: center;
+  padding: 8px;
+  gap: 1em;
+  overflow-y: auto;
+}
+
+#chapters > ul > li {
+  width: 100%;
+  color: var(--cor1);
+  list-style: none;
+  padding: 8px;
+  font-size: 1.1em;
+  border: 2px solid var(--cor1);
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#chapters > ul > li:hover {
+  background-color: var(--cor3);
+  transform: scale(110%);
+}
+
+#chapters .continue {
+  color: var(--cor0);
+  border-color: var(--cor0);
+}
+
+@media (max-width: 660px) {
+  #chapters {
+    width: 320px;
+    height: 320px;
+  }
+  #chapters > ul {
+    height: 80%;
+    grid-template-columns: repeat(5, 2.5rem);
+  }
+}
