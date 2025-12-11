@@ -35,6 +35,7 @@ export default function Home() {
       </section>
       <ul ref={ulRef}>
         {books.map((verse: any, index: number) => {
+          const regex = new RegExp(`(${search})`, "gi");
           return (
             <li
               key={index}
@@ -48,9 +49,10 @@ export default function Home() {
               <span className={styles.info}>
                 {verse.book.abbrev.pt} {verse.chapter}:{verse.number}
               </span>{" "}
-              {verse.text.split(search)[0]}
-              <span>{search}</span>
-              {verse.text.split(search)[1]}
+              {verse.text.split(regex).map((value: any, i: number) => {
+                if (!regex.test(value)) return value;
+                return <span key={i}>{value}</span>;
+              })}
             </li>
           );
         })}

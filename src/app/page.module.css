@@ -1,4 +1,4 @@
-#page {
+#s1 {
   position: relative;
   min-height: 100%;
   display: flex;
@@ -7,10 +7,9 @@
   justify-content: center;
   padding-top: 3.5em;
   padding-bottom: 1.5em;
-  overflow: hidden;
 }
 
-#page > #content {
+#s1 > #content {
   position: absolute;
   top: 10rem;
   left: 5rem;
@@ -19,21 +18,21 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#page > #content > h2 {
+#s1 > #content > h2 {
   color: var(--cor1);
   text-decoration: underline;
 }
 
-#page > #content > p {
+#s1 > #content > p {
   width: 40%;
   margin: 16px;
 }
 
-#page > #content > p > span {
+#s1 > #content > p > span {
   font-weight: bold;
 }
 
-#page > #content button {
+#s1 > #content button {
   background-color: var(--cor2);
   color: var(--cor1);
   padding: 8px 16px;
@@ -47,13 +46,13 @@
   cursor: pointer;
 }
 
-#page > #content button:hover {
+#s1 > #content button:hover {
   background-color: var(--cor1);
   color: var(--cor2);
   transform: scale(110%);
 }
 
-#page > #bible {
+#s1 > #bible {
   position: absolute;
   right: 5rem;
   height: 24rem;
@@ -66,37 +65,88 @@
   box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-#page > #bible > img {
+#s1 > #bible > img {
   transition: all 0.4s ease;
   transform-style: preserve-3d;
   transform: rotateX(20deg) rotateY(25deg) rotateZ(15deg);
+  cursor: pointer;
 }
 
-#page > #bible > img:hover {
+#s1 > #bible > img:hover {
   transform: scale(110%);
 }
 
+#s2 {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bodyColor);
+  color: var(--textColor);
+  align-items: center;
+  justify-content: center;
+  padding-top: 3.5em;
+  padding-bottom: 1.5em;
+  gap: 2rem;
+  transition: all 0.5s ease-in-out;
+}
+
+#s2 > section {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  border: 2px solid var(--textColor);
+  border-radius: 8px;
+}
+
+#s2 > section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#s2 > section > div:hover {
+  transform: scale(110%);
+}
+
+#s2 > section > div > img {
+  border-radius: 20px;
+}
+
 @media (max-width: 950px) {
-  #page {
+  #s1 {
     overflow-y: auto;
   }
-  #page > #content {
+  #s1 > #content {
     top: 50%;
     left: 55%;
     width: 100%;
     transform: translate(-50%, -50%);
     font-size: 1fr;
   }
-  #page > #content > p {
+  #s1 > #content > p {
     width: 90%;
   }
-  #page > #bible {
+  #s1 > #bible {
     display: none;
+  }
+  #s2 > section {
+    width: 90%;
+    padding: 25px;
+  }
+  #s2 > section > div {
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 600px) {
-  #page > #content {
-    font-size: 1.5rem;
+  #s1 > #content {
+    font-size: 1.4rem;
   }
 }
