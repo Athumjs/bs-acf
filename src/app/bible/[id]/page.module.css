@@ -36,17 +36,6 @@
   transition: all 0.5s ease-in-out;
 }
 
-#page > section > ul {
-  display: flex;
-  flex-direction: column;
-  text-align: justify;
-  gap: 1em;
-}
-
-#page > section > ul > li {
-  list-style: none;
-}
-
 @media (max-width: 660px) {
   #page > h1 {
     width: 90%;

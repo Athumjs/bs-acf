@@ -53,7 +53,10 @@ export default function Chapters({
             }
             key={chapter}
             onClick={() => {
-              open(`/${book.abbrev.pt}-${chapter}-${book.chapters}`, "_self");
+              open(
+                `/bible/${book.abbrev.pt}-${chapter}-${book.chapters}`,
+                "_self"
+              );
               localStorage.setItem("currentChapter", chapter.toString());
               localStorage.setItem("currentBook", book.name);
             }}

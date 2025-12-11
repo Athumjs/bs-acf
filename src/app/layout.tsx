@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/layout/Navbar";
+import dotenv from "dotenv";
+
+dotenv.config({ path: "src/app/.env" });
 
 const font = Inter({
   subsets: ["latin"],

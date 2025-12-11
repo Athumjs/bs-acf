@@ -1,0 +1,79 @@
+#page {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 9em;
+  padding-bottom: 1.5em;
+  overflow-y: auto;
+}
+
+#page > section {
+  position: fixed;
+  top: 3.4rem;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bodyColor);
+  transition: all 0.5s ease-in-out;
+  z-index: 9999;
+}
+
+#page input {
+  width: 50%;
+  height: max-content;
+  padding: 8px;
+  font-size: 1rem;
+  outline: none;
+  border: 2px solid var(--cor2);
+  border-radius: 5px;
+}
+
+#page > ul {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#page > ul > li {
+  position: relative;
+  width: 100%;
+  background-color: var(--cor2);
+  color: var(--cor1);
+  list-style: none;
+  padding: 12px;
+  font-size: 1.1em;
+  line-height: 1.8rem;
+  border-bottom: 2px solid var(--cor3);
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#page > ul > li > .info {
+  font-weight: bold;
+  padding: 3px;
+  border: 2px solid var(--cor1);
+  border-radius: 6px;
+}
+
+#page > ul > li > span:not(.info) {
+  color: var(--cor0);
+  font-weight: bold;
+}
+
+@media (max-width: 660px) {
+  #page > section {
+    top: 3rem;
+  }
+  #page input,
+  #page > ul {
+    width: 80%;
+  }
+}

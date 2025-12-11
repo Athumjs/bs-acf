@@ -1,5 +1,6 @@
 import Arrow from "@/components/Arrow";
 import styles from "./page.module.css";
+import VerseList from "@/components/VerseList";
 
 const token = process.env.TOKEN;
 
@@ -29,13 +30,7 @@ export default async function Page({
         {book.name} {chapter.number} <span>Livro de {book.author}</span>
       </h1>
       <section>
-        <ul>
-          {verses.map((verse: any) => (
-            <li key={verse.number}>
-              {verse.number} {verse.text}
-            </li>
-          ))}
-        </ul>
+        <VerseList verses={verses} active={id.split("-")[3]} />
       </section>
       <Arrow
         path="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"

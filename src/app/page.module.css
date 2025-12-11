@@ -1,74 +1,102 @@
 #page {
+  position: relative;
   min-height: 100%;
   display: flex;
-  flex-direction: column;
+  background-color: var(--cor2);
   align-items: center;
   justify-content: center;
   padding-top: 3.5em;
   padding-bottom: 1.5em;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
-#page > h2 {
-  width: 50%;
-  background-color: var(--cor3);
+#page > #content {
+  position: absolute;
+  top: 10rem;
+  left: 5rem;
   color: var(--cor0);
-  padding: 8px 16px;
-  font-size: 1.8em;
-  margin: 0.5em;
-  border-radius: 5px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#page > ul {
+#page > #content > h2 {
+  color: var(--cor1);
+  text-decoration: underline;
+}
+
+#page > #content > p {
   width: 40%;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+  margin: 16px;
 }
 
-#page > ul > li {
-  position: relative;
-  width: 100%;
+#page > #content > p > span {
+  font-weight: bold;
+}
+
+#page > #content button {
   background-color: var(--cor2);
   color: var(--cor1);
-  list-style: none;
-  padding: 12px;
-  font-size: 1.1em;
-  border-bottom: 2px solid var(--cor3);
-  border-radius: 5px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 8px 16px;
+  font-size: 1.1rem;
+  border: 2px solid var(--cor1);
+  border-radius: 15px;
+  margin-left: 1em;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 
-#page > ul > li:hover {
-  background-color: var(--cor3);
-  transform: scale(105%);
+#page > #content button:hover {
+  background-color: var(--cor1);
+  color: var(--cor2);
+  transform: scale(110%);
 }
 
-#page > ul > li > span {
-  font-weight: bold;
-  padding: 3px;
-  border: 2px solid var(--cor1);
-  border-radius: 6px;
-}
-
-#page .continue {
-  color: var(--cor0);
-}
-
-#page .continue::after {
-  content: "continue lendo...";
+#page > #bible {
   position: absolute;
-  right: 16px;
+  right: 5rem;
+  height: 24rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--cor1);
+  perspective: 2000px;
+  outline: 2px solid var(--cor3);
+  border-radius: 5rem;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 660px) {
-  #page > h2 {
-    width: 70%;
+#page > #bible > img {
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg) rotateY(25deg) rotateZ(15deg);
+}
+
+#page > #bible > img:hover {
+  transform: scale(110%);
+}
+
+@media (max-width: 950px) {
+  #page {
+    overflow-y: auto;
   }
-  #page > ul {
-    width: 60%;
+  #page > #content {
+    top: 50%;
+    left: 55%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-size: 1fr;
+  }
+  #page > #content > p {
+    width: 90%;
+  }
+  #page > #bible {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #page > #content {
+    font-size: 1.5rem;
   }
 }

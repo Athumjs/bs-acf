@@ -1,61 +1,27 @@
 "use client";
-import Chapters from "@/components/Chapters";
+import Image from "next/image";
 import styles from "./page.module.css";
-import { useEffect, useState } from "react";
-
-const token = process.env.TOKEN;
 
 export default function Home() {
-  const [books, setBooks] = useState<any[]>([]);
-  const [currentBook, setCurrentBook] = useState<any>({});
-  useEffect(() => {
-    async function main() {
-      const data = await fetch("/api/books");
-      setBooks(await data.json());
-    }
-    main();
-  }, []);
   return (
     <main id={styles.page}>
-      <h2>Antigo Testamento</h2>
-      <ul id={styles.at}>
-        {books.map((book: any, index: number) => {
-          if (book.testament === "VT")
-            return (
-              <li
-                className={
-                  localStorage.getItem("currentBook") === book.name
-                    ? styles.continue
-                    : ""
-                }
-                key={index}
-                onClick={() => setCurrentBook(book)}
-              >
-                <span>{book.abbrev.pt}</span> {book.name}
-              </li>
-            );
-        })}
-      </ul>
-      <h2>Novo Testamento</h2>
-      <ul id={styles.nt}>
-        {books.map((book: any, index: number) => {
-          if (book.testament === "NT")
-            return (
-              <li
-                className={
-                  localStorage.getItem("currentBook") === book.name
-                    ? styles.continue
-                    : ""
-                }
-                key={index}
-                onClick={() => setCurrentBook(book)}
-              >
-                <span>{book.abbrev.pt}</span> {book.name}
-              </li>
-            );
-        })}
-      </ul>
-      <Chapters book={currentBook} setBook={setCurrentBook} />
+      <section id={styles.content}>
+        <h1>Bíblia Sagrada</h1>
+        <h2>Almeida Corrigida Fiel</h2>
+        <p>
+          "Quem crer e for batizado será salvo; mas quem não crer será
+          condenado." - <span>Marcos 16:16</span>
+        </p>
+        <div>
+          <button onClick={() => open("/bible", "_self")}>Comece a Ler</button>
+          <button onClick={() => open("/search", "_self")}>
+            Pesquisar por palavra
+          </button>
+        </div>
+      </section>
+      <section id={styles.bible}>
+        <Image src="/bible.png" alt="biblia imagem" width={336} height={500} />
+      </section>
     </main>
   );
 }

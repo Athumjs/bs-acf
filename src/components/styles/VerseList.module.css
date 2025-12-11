@@ -1,0 +1,19 @@
+#ul {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  gap: 1em;
+}
+
+#ul > li {
+  list-style: none;
+}
+
+#ul > li > span {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+#ul .active {
+  color: var(--cor0);
+}
