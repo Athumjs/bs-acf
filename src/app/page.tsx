@@ -10,13 +10,7 @@ export default function Home() {
   const [currentBook, setCurrentBook] = useState<any>({});
   useEffect(() => {
     async function main() {
-      const data = await fetch("https://www.abibliadigital.com.br/api/books", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      });
+      const data = await fetch("/api/books");
       setBooks(await data.json());
     }
     main();
